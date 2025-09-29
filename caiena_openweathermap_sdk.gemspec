@@ -10,11 +10,11 @@ Gem::Specification.new do |spec|
 
   spec.summary = "Use this SDK to access weather information from Open Weather Map API"
   spec.description = "SDK for Open Weather Map API access"
-  spec.homepage = "https://github.com/petersonddb/caiena-openweathermap-sdk"
+  spec.homepage = "https://github.com/petersonddb/caiena_openweathermap_sdk"
   spec.required_ruby_version = ">= 3.2.0"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://github.com/petersonddb/caiena-openweathermap-sdk"
+  spec.metadata["source_code_uri"] = "https://github.com/petersonddb/caiena_openweathermap_sdk"
   spec.metadata["rubygems_mfa_required"] = "true"
 
   # Specify which files should be added to the gem when it is released.
