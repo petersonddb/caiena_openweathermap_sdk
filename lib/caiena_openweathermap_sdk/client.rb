@@ -20,7 +20,8 @@ module CaienaOpenweathermapSdk
     # @param appid should be a access key generated at open weather
     # @return current temperature for the given location
     def current_temperature(location, appid)
-      uri = URI.parse("#{@base_url}/data/2.5/weather?q=#{location}&units=metric&appid=#{appid}")
+      safe_location = URI.encode_uri_component location
+      uri = URI.parse("#{@base_url}/data/2.5/weather?q=#{safe_location}&units=metric&appid=#{appid}")
 
       begin
         response = Net::HTTP.get_response(uri)
@@ -39,7 +40,8 @@ module CaienaOpenweathermapSdk
     # @param appid should be a access key generated at open weather
     # @return average forecast by day for the given location
     def forecast(location, appid)
-      uri = URI.parse("#{@base_url}/data/2.5/forecast?q=#{location}&units=metric&appid=#{appid}")
+      safe_location = URI.encode_uri_component location
+      uri = URI.parse("#{@base_url}/data/2.5/forecast?q=#{safe_location}&units=metric&appid=#{appid}")
 
       begin
         response = Net::HTTP.get_response(uri)
