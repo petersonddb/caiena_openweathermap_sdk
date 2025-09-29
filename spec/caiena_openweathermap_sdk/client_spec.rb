@@ -7,7 +7,7 @@ RSpec.describe CaienaOpenweathermapSdk::Client do
   let(:client) { described_class.new base_uri }
 
   describe "#current_temperature" do
-    let(:params) { { q: "pocos de caldas", appid: "1607477f414a5c994c30ab1191986aab", units: "metric" } }
+    let(:params) { { q: "anywhere", appid: "anything", units: "metric" } }
     let(:current_temperature) { client.current_temperature params[:q], params[:appid] }
 
     let(:current_weather) { "#{base_uri}/data/2.5/weather" }
