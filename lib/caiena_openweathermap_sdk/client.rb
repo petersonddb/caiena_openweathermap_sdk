@@ -52,8 +52,14 @@ module CaienaOpenweathermapSdk
 
       raise OpenweathermapError, body["message"] || "unknown error" unless response.is_a? Net::HTTPSuccess
 
-      body["list"].group_by { |f| Date.parse(f["dt_txt"]).to_date.to_s }
-                  .transform_values { |entries| (entries.sum { |e| e["main"]["temp"] } / entries.size).round(2) }
+      serialize_forecast_temperatures(body["list"])
+    end
+
+    private
+
+    def serialize_forecast_temperatures(list)
+      list.group_by { |f| Date.parse(f["dt_txt"]).to_date.to_s }
+          .transform_values { |entries| (entries.sum { |e| e["main"]["temp"] } / entries.size).round(2) }
     end
   end
 end
