@@ -1,4 +1,4 @@
-# CaienaOpenweathermapSdk
+# Caiena Open Weather SDK
 
 Use this SDK to access weather information from Open Weather Map API.
 
